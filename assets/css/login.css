@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.auth-neon-bg{
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#7a00ff55 0%,transparent 70%);
+    filter:blur(80px);
+    z-index:0;
+}
+
+.auth-wrapper{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    background:#070707;
+    overflow:hidden;
+    padding:30px;
+}
+
+.auth-disc{
+    position:absolute;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:
+    radial-gradient(circle,#111 25%,#000 26%,#222 35%,#000 36%,#111 55%,#000 56%);
+    right:12%;
+    top:15%;
+    box-shadow:0 0 35px #00e5ff;
+    animation:authSpin 8s linear infinite;
+}
+
+.auth-disc::after{
+    content:"";
+    position:absolute;
+    width:60px;
+    height:60px;
+    background:#ff4dd2;
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.auth-panel{
+    width:420px;
+    background:rgba(14,14,14,.88);
+    border:1px solid #2a2a2a;
+    backdrop-filter:blur(16px);
+    padding:45px;
+    border-radius:25px;
+    position:relative;
+    z-index:2;
+    box-shadow:
+    0 0 25px rgba(255,77,210,.25),
+    0 0 45px rgba(0,229,255,.15);
+}
+
+.auth-title{
+    font-size:38px;
+    text-align:center;
+    color:#ff4dd2;
+    margin-bottom:10px;
+    font-family:'Orbitron',sans-serif;
+    text-shadow:0 0 15px #ff4dd2;
+}
+
+.auth-subtitle{
+    text-align:center;
+    color:#bdbdbd;
+    margin-bottom:35px;
+}
+
+.auth-field{
+    margin-bottom:20px;
+}
+
+.auth-field input{
+    width:100%;
+    padding:16px 20px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    background:#111;
+    color:white;
+    border:1px solid #262626;
+    transition:.3s;
+}
+
+.auth-field input:focus{
+    border-color:#00e5ff;
+    box-shadow:0 0 15px #00e5ff55;
+}
+
+.auth-submit{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:40px;
+    background:#ff4dd2;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 0 20px #ff4dd288;
+}
+
+.auth-submit:hover{
+    background:#00e5ff;
+    box-shadow:0 0 25px #00e5ff;
+}
+
+@keyframes authSpin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@media(max-width:900px){
+
+    .auth-disc{
+        display:none;
+    }
+
+    .auth-panel{
+        width:100%;
+        max-width:420px;
+    }
+}
