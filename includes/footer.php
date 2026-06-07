@@ -1,5 +1,5 @@
 <footer>
-    <p>© 2026 RetroWave Music — Tous droits réservés</p>
+    <p>© 2026 Wavey — Tous droits réservés</p>
 </footer>
 
 </body>

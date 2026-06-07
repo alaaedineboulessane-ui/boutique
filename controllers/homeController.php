@@ -1,8 +1,13 @@
 <?php
 
-class HomeController {
+require_once __DIR__ . '/../Models/MusicModel.php';
 
-    public function showHome() {
+class HomeController
+{
+    public function showHome()
+    {
+        $musiques = Music::all();
+
         require __DIR__ . '/../views/AccueilView.php';
     }
 }

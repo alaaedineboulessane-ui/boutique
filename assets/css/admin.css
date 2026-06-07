@@ -1,0 +1,230 @@
+#admin-page{
+    min-height:100vh;
+    display:flex;
+    background:
+    radial-gradient(circle at top,#2d004d 0%,transparent 40%),
+    #090909;
+    color:white;
+    padding-top:100px;
+}
+
+.admin-sidebar{
+    width:260px;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(12px);
+    border-right:1px solid #222;
+    padding:35px;
+    box-shadow:0 0 25px rgba(255,77,210,.15);
+}
+
+.admin-logo{
+    font-family:'Orbitron',sans-serif;
+    color:#ff4dd2;
+    font-size:28px;
+    text-shadow:0 0 15px #ff4dd2;
+    margin-bottom:40px;
+}
+
+.admin-menu{
+    list-style:none;
+}
+
+.admin-menu li{
+    margin:22px 0;
+}
+
+.admin-menu a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+    font-size:15px;
+}
+
+.admin-menu a:hover{
+    color:#00e5ff;
+    text-shadow:0 0 10px #00e5ff;
+}
+
+.admin-main{
+    flex:1;
+    padding:45px;
+}
+
+.admin-header-box{
+    margin-bottom:35px;
+}
+
+.admin-header-box h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:42px;
+    color:#ff4dd2;
+    text-shadow:0 0 20px #ff4dd2;
+    margin-bottom:10px;
+}
+
+.admin-header-box p{
+    color:#bdbdbd;
+}
+
+.admin-card-box{
+    background:#111;
+    border:1px solid #222;
+    border-radius:22px;
+    padding:30px;
+    margin-bottom:30px;
+    box-shadow:0 0 20px rgba(255,77,210,.15);
+}
+
+.admin-section-title{
+    font-family:'Orbitron',sans-serif;
+    color:#00e5ff;
+    margin-bottom:25px;
+    text-shadow:0 0 12px #00e5ff;
+}
+
+.admin-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.admin-form input{
+    width:100%;
+    box-sizing:border-box;
+    padding:15px 18px;
+    border-radius:14px;
+    border:1px solid #333;
+    background:#0d0d0d;
+    color:white;
+    outline:none;
+    transition:.25s;
+    font-size:15px;
+}
+
+.admin-form input:focus{
+    border-color:#00e5ff;
+    box-shadow:0 0 14px rgba(0,229,255,.35);
+}
+
+.admin-form input[type="file"]{
+    padding:14px;
+    cursor:pointer;
+}
+
+.admin-form input[type="file"]::file-selector-button{
+    background:#ff4dd2;
+    color:white;
+    border:none;
+    padding:10px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-right:15px;
+    transition:.25s;
+}
+
+.admin-form input[type="file"]::file-selector-button:hover{
+    background:#ff2aa1;
+}
+
+.admin-submit-btn{
+    border:none;
+    padding:15px;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:15px;
+    color:white;
+    background:linear-gradient(135deg,#ff4dd2,#00e5ff);
+    box-shadow:0 0 20px rgba(255,77,210,.35);
+    transition:.25s;
+}
+
+.admin-submit-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 25px rgba(0,229,255,.45);
+}
+
+.admin-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.admin-table th{
+    color:#00e5ff;
+    padding:18px;
+    border-bottom:1px solid #333;
+    text-align:left;
+}
+
+.admin-table td{
+    padding:18px;
+    border-bottom:1px solid #222;
+}
+
+.admin-table tr:hover{
+    background:rgba(255,255,255,.03);
+}
+
+.admin-actions{
+    display:flex;
+    gap:12px;
+}
+
+.admin-edit-btn,
+.admin-delete-btn{
+    border:none;
+    padding:10px 16px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.25s;
+    color:white;
+    font-size:14px;
+}
+
+.admin-edit-btn{
+    background:linear-gradient(135deg,#00e5ff,#00a3c7);
+    box-shadow:0 0 12px rgba(0,229,255,.35);
+}
+
+.admin-delete-btn{
+    background:linear-gradient(135deg,#ff4dd2,#ff2aa1);
+    box-shadow:0 0 12px rgba(255,77,210,.35);
+}
+
+.admin-edit-btn:hover,
+.admin-delete-btn:hover{
+    transform:translateY(-2px);
+}
+
+@media(max-width:900px){
+
+    #admin-page{
+        flex-direction:column;
+    }
+
+    .admin-sidebar{
+        width:100%;
+        border-right:none;
+        border-bottom:1px solid #222;
+    }
+
+    .admin-menu{
+        display:flex;
+        gap:25px;
+        flex-wrap:wrap;
+    }
+}
+
+@media(max-width:600px){
+
+    .admin-main{
+        padding:25px;
+    }
+
+    .admin-header-box h1{
+        font-size:30px;
+    }
+
+    .admin-actions{
+        flex-direction:column;
+    }
+}

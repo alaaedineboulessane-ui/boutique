@@ -214,8 +214,7 @@ header{
     width:100%;
     height:220px;
     border-radius:15px;
-    background:
-    linear-gradient(135deg,#ff4dd2,#00e5ff);
+    background:linear-gradient(135deg,#ff4dd2,#00e5ff);
     margin-bottom:20px;
 }
 
@@ -233,18 +232,34 @@ header{
     font-size:20px;
 }
 
+.actions{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:10px;
+}
+
 .card button{
-    border:none;
-    background:#ff4dd2;
+    border:1px solid transparent;
+    background:linear-gradient(135deg,#ff4dd2,#ff2aa1);
     color:white;
-    padding:12px 25px;
-    border-radius:30px;
+    padding:10px 14px;
+    border-radius:12px;
     cursor:pointer;
-    transition:.3s;
+    transition:.25s;
+    font-size:14px;
+    box-shadow:0 0 12px rgba(255,77,210,.4);
 }
 
 .card button:hover{
-    background:#00e5ff;
+    background:linear-gradient(135deg,#00e5ff,#00a3c7);
+    box-shadow:0 0 18px rgba(0,229,255,.6);
+    transform:translateY(-2px);
+}
+
+.card button:active{
+    transform:translateY(0px) scale(0.97);
 }
 
 .features{
@@ -280,33 +295,27 @@ footer{
     color:#888;
 }
 
-#stellar {
-    background-image: url("https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d2/1c/9c/d21c9c3a-8dfd-70ad-6cbb-d8caf8910d26/888272133462.jpg/600x600bf-60.jpg");
-    background-size: cover;
+#stellar{
+    background-image:url("https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d2/1c/9c/d21c9c3a-8dfd-70ad-6cbb-d8caf8910d26/888272133462.jpg/600x600bf-60.jpg");
+    background-size:cover;
 }
 
-#kh {
-    background-image: url("https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d2/1d/09/d21d09ca-d25a-486e-371d-cf3cdfe0390e/20UMGIM91238.rgb.jpg/600x600bf-60.jpg");
-    background-size: cover;
+#kh{
+    background-image:url("https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d2/1d/09/d21d09ca-d25a-486e-371d-cf3cdfe0390e/20UMGIM91238.rgb.jpg/600x600bf-60.jpg");
+    background-size:cover;
 }
 
-
-#Makoto{
-    background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/d7/0e/72/d70e724e-d8c0-8043-516a-ba47299b1554/PA00136839_1_185077_jacket.jpg/486x486bb.png');
-    background-size: cover;
+#makoto{
+    background-image:url("https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/d7/0e/72/d70e724e-d8c0-8043-516a-ba47299b1554/PA00136839_1_185077_jacket.jpg/486x486bb.png");
+    background-size:cover;
 }
 
 @keyframes spin{
-    from{
-        transform:rotate(0);
-    }
-    to{
-        transform:rotate(360deg);
-    }
+    from{transform:rotate(0);}
+    to{transform:rotate(360deg);}
 }
 
 @media(max-width:950px){
-
     .hero{
         flex-direction:column;
         text-align:center;
@@ -338,7 +347,6 @@ footer{
 }
 
 @media(max-width:600px){
-
     .navbar{
         flex-direction:column;
         gap:15px;

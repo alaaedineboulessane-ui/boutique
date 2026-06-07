@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,21 +16,36 @@
 
 <link rel="stylesheet" href="./assets/css/index.css">
 <link rel="stylesheet" href="./assets/css/login.css">
-
-<title>RetroWave</title>
+<link rel="stylesheet" href="./assets/css/admin.css">
+<link rel="stylesheet" href="./assets/css/Catalog.css">
+<title>Wavey</title>
 </head>
 <body>
 
 <header>
     <nav class="navbar">
-        <div class="logo">RETROWAVE</div>
+        <div class="logo">WAVEY</div>
 
         <ul class="nav-links">
             <li><a href="index.php?page=home">Accueil</a></li>
             <li><a href="index.php?page=catalogue">Catalogue</a></li>
-            <li><a href="./index.php?page=login">Connexion</a></li>
-            <li><a href="index.php?page=register">Inscription</a></li>
             <li><a href="index.php?page=cart">Panier</a></li>
+
+            <?php if (isset($_SESSION['user'])): ?>
+
+                <?php if ($_SESSION['user']['role'] === 'admin'): ?>
+                    <li><a href="index.php?page=admin">Admin</a></li>
+                <?php endif; ?>
+
+                <li><a href="index.php?page=logout">Déconnexion</a></li>
+
+            <?php else: ?>
+
+                <li><a href="index.php?page=login">Connexion</a></li>
+                <li><a href="index.php?page=register">Inscription</a></li>
+
+            <?php endif; ?>
+
         </ul>
     </nav>
 </header>
