@@ -18,6 +18,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <link rel="stylesheet" href="./assets/css/login.css">
 <link rel="stylesheet" href="./assets/css/admin.css">
 <link rel="stylesheet" href="./assets/css/Catalog.css">
+<link rel="stylesheet" href="./assets/css/cart.css">
 <title>Wavey</title>
 </head>
 <body>

@@ -51,11 +51,19 @@
 
                         <div class="catalog-actions">
 
-                            <button class="catalog-preview-btn">
+                            <audio id="audio-<?= $musique['id'] ?>">
+                                <source src="<?= htmlspecialchars($musique['chemin_fichier']) ?>" type="audio/mpeg">
+                            </audio>
+
+                            <button
+                                type="button"
+                                class="catalog-preview-btn"
+                                onclick="playSound('audio-<?= $musique['id'] ?>')">
                                 ▶ Écouter
                             </button>
 
                             <button
+                                type="button"
                                 class="catalog-cart-btn"
                                 onclick="addToCart(<?= $musique['id'] ?>)">
                                 🛒 Ajouter
@@ -75,4 +83,5 @@
 
 </main>
 
+<script src="./assets/javascript/index.js"></script>
 <?php require __DIR__ . '/../includes/footer.php'; ?>

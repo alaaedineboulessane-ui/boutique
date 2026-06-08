@@ -23,48 +23,26 @@
 
         <section class="admin-card-box">
 
-            <h2 class="admin-section-title">
-                Ajouter une musique
-            </h2>
+            <h2 class="admin-section-title">Ajouter une musique</h2>
 
-            <form
-                action="index.php?page=store-music"
-                method="POST"
-                enctype="multipart/form-data"
-                class="admin-form"
-            >
+            <form action="index.php?page=store-music"
+                  method="POST"
+                  enctype="multipart/form-data"
+                  class="admin-form">
 
-                <input
-                    type="text"
-                    name="titre"
-                    placeholder="Titre"
-                    required
-                >
+                <input type="text" name="titre" placeholder="Titre" required>
 
-                <input
-                    type="text"
-                    name="artiste"
-                    placeholder="Artiste"
-                    required
-                >
+                <input type="text" name="artiste" placeholder="Artiste" required>
 
-                <input
-                    type="text"
-                    name="categorie"
-                    placeholder="Catégorie"
-                    required
-                >
+                <input type="text" name="categorie" placeholder="Catégorie" required>
 
-                <input
-                    type="file"
-                    name="audio"
-                    required
-                >
+                <input type="number" step="0.01" name="prix" placeholder="Prix" required>
 
-                <button
-                    type="submit"
-                    class="admin-submit-btn"
-                >
+                <input type="text" name="image" placeholder="Lien image" required>
+
+                <input type="file" name="audio" required>
+
+                <button type="submit" class="admin-submit-btn">
                     Ajouter
                 </button>
 
@@ -74,14 +52,13 @@
 
         <section class="admin-card-box">
 
-            <h2 class="admin-section-title">
-                Catalogue
-            </h2>
+            <h2 class="admin-section-title">Catalogue</h2>
 
             <table class="admin-table">
 
                 <thead>
                     <tr>
+                        <th>Image</th>
                         <th>Titre</th>
                         <th>Artiste</th>
                         <th>Catégorie</th>
@@ -91,44 +68,35 @@
 
                 <tbody>
 
-                    <?php if(!empty($musiques)): ?>
-
-                        <?php foreach($musiques as $musique): ?>
+                    <?php if (!empty($musiques)): ?>
+                        <?php foreach ($musiques as $musique): ?>
 
                             <tr>
 
                                 <td>
-                                    <?= htmlspecialchars($musique['titre']) ?>
+                                    <img src="<?= htmlspecialchars($musique['chemin_image']) ?>" width="50">
                                 </td>
 
-                                <td>
-                                    <?= htmlspecialchars($musique['artiste']) ?>
-                                </td>
-
-                                <td>
-                                    <?= htmlspecialchars($musique['categorie']) ?>
-                                </td>
+                                <td><?= htmlspecialchars($musique['titre']) ?></td>
+                                <td><?= htmlspecialchars($musique['artiste']) ?></td>
+                                <td><?= htmlspecialchars($musique['categorie']) ?></td>
 
                                 <td class="admin-actions">
 
-                                    <button
-                                        class="admin-edit-btn"
-                                    >
-                                        Modifier
-                                    </button>
+                                    <button class="admin-edit-btn">Modifier</button>
 
-                                    <button
-                                        class="admin-delete-btn"
-                                    >
-                                        Supprimer
-                                    </button>
+                                    <form method="POST" action="index.php?page=delete-music" style="display:inline;">
+                                        <input type="hidden" name="id" value="<?= $musique['id'] ?>">
+                                        <button type="submit" class="admin-delete-btn">
+                                            Supprimer
+                                        </button>
+                                    </form>
 
                                 </td>
 
                             </tr>
 
                         <?php endforeach; ?>
-
                     <?php endif; ?>
 
                 </tbody>

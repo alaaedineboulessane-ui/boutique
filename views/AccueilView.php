@@ -88,7 +88,7 @@
             <span>Azumi Takahashi</span>
             <p>1.49€</p>
 
-            <audio id="audio-makoto" src="/sounds/makoto.mp3"></audio>
+            <audio id="audio-makoto" src="./mp3/FullMoonFullLife.mp3"></audio>
 
             <div class="actions">
                 <button aria-label="Lire la musique"

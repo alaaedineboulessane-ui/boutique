@@ -7,6 +7,7 @@ require_once __DIR__ . '/controllers/HomeController.php';
 require_once __DIR__ . '/controllers/AdminController.php';
 require_once __DIR__ . '/controllers/MusicController.php';
 require_once __DIR__ . '/controllers/CatalogController.php';
+require_once __DIR__ . '/controllers/CartController.php';
 
 switch ($page) {
 
@@ -49,6 +50,21 @@ switch ($page) {
         $controller = new MusicController();
         $controller->addToCart();
         break;
+    
+    case 'cart':
+    $controller = new CartController();
+    $controller->index();
+    break;
+
+    case 'remove-from-cart':
+    $controller = new CartController();
+    $controller->removeFromCart();
+    break;
+
+    case 'delete-music':
+    $admin = new AdminController();
+    $admin->deleteMusic();
+    break;
 
     default:
         $controller = new HomeController();
