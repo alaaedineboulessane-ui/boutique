@@ -18,3 +18,16 @@ function addToCart(musiqueId)
         console.error(error);
     });
 }
+
+function confirmCheckout(event)
+{
+    const confirmed = confirm("Confirmer l'achat de ce panier ?");
+
+    if (!confirmed) {
+        event.preventDefault();
+        return false;
+    }
+
+    return true;
+}
+

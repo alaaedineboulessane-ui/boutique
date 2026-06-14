@@ -19,6 +19,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <link rel="stylesheet" href="./assets/css/admin.css">
 <link rel="stylesheet" href="./assets/css/Catalog.css">
 <link rel="stylesheet" href="./assets/css/cart.css">
+<link rel="stylesheet" href="./assets/css/Collection.css">
 <title>Wavey</title>
 </head>
 <body>
@@ -31,6 +32,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <li><a href="index.php?page=home">Accueil</a></li>
             <li><a href="index.php?page=catalogue">Catalogue</a></li>
             <li><a href="index.php?page=cart">Panier</a></li>
+            <li><a href="index.php?page=collection">Collection</a></li>
 
             <?php if (isset($_SESSION['user'])): ?>
 

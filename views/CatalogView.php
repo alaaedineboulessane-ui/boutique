@@ -84,4 +84,5 @@
 </main>
 
 <script src="./assets/javascript/index.js"></script>
+<script src="./assets/javascript/Catalog.js"></script>
 <?php require __DIR__ . '/../includes/footer.php'; ?>

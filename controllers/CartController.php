@@ -74,5 +74,67 @@ public function removeFromCart()
     header('Location: index.php?page=cart');
     exit;
 }
+
+public function checkout()
+{
+    session_start();
+
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: index.php?page=login');
+        exit;
+    }
+
+    global $pdo;
+
+    $userId = $_SESSION['user_id'];
+
+
+    $stmt = $pdo->prepare("
+        SELECT id
+        FROM panier
+        WHERE utilisateur_id = ?
+        AND statut = 'actif'
+        LIMIT 1
+    ");
+
+    $stmt->execute([$userId]);
+    $panier = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$panier) {
+        header('Location: index.php?page=cart');
+        exit;
+    }
+
+    $panierId = $panier['id'];
+
+
+    $stmt = $pdo->prepare("
+        UPDATE panier
+        SET statut = 'valide'
+        WHERE id = ?
+    ");
+
+    $stmt->execute([$panierId]);
+
+    $stmt = $pdo->prepare("
+        INSERT INTO collection (utilisateur_id, musique_id)
+        SELECT p.utilisateur_id, pi.musique_id
+        FROM panier p
+        INNER JOIN panier_item pi ON p.id = pi.panier_id
+        WHERE p.id = ?
+    ");
+
+    $stmt->execute([$panierId]);
+
+    $stmt = $pdo->prepare("
+        DELETE FROM panier_item
+        WHERE panier_id = ?
+    ");
+
+    $stmt->execute([$panierId]);
+
+    header('Location: index.php?page=collection');
+    exit;
+}
 }
 
