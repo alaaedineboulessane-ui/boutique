@@ -1,7 +1,7 @@
 <?php
 
 
-class MusicControlle
+class MusicController
 {
     public function addToCart()
     {
