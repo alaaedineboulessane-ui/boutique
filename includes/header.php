@@ -26,7 +26,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <header>
     <nav class="navbar">
-        <div class="logo">WAVEYY</div>
+        <div class="logo">WAVEY</div>
 
         <ul class="nav-links">
             <li><a href="index.php?page=home">Accueil</a></li>
