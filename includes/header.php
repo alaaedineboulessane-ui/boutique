@@ -20,7 +20,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <link rel="stylesheet" href="./assets/css/Catalog.css">
 <link rel="stylesheet" href="./assets/css/cart.css">
 <link rel="stylesheet" href="./assets/css/Collection.css">
-<title>Wavey</title>
+<title>Wave</title>
 </head>
 <body>
 
