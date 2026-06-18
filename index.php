@@ -9,6 +9,7 @@ require_once __DIR__ . '/controllers/MusicController.php';
 require_once __DIR__ . '/controllers/CatalogController.php';
 require_once __DIR__ . '/controllers/CartController.php';
 require_once __DIR__ . '/controllers/CollectionController.php';
+require_once __DIR__ . '/controllers/ProfileController.php';
 
 switch ($page) {
 
@@ -75,6 +76,11 @@ switch ($page) {
     case 'checkout':
     $controller = new CartController();
     $controller->checkout();
+    break;
+
+    case 'profile':
+    $controller = new ProfileController();
+    $controller->index();
     break;
 
     default:

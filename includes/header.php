@@ -20,6 +20,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <link rel="stylesheet" href="./assets/css/Catalog.css">
 <link rel="stylesheet" href="./assets/css/cart.css">
 <link rel="stylesheet" href="./assets/css/Collection.css">
+<link rel="stylesheet" href="./assets/css/Profile.css">
 <title>Wavey</title>
 </head>
 <body>
@@ -39,6 +40,8 @@ if (session_status() === PHP_SESSION_NONE) {
                 <?php if ($_SESSION['user']['role'] === 'admin'): ?>
                     <li><a href="index.php?page=admin">Admin</a></li>
                 <?php endif; ?>
+
+                <li><a href="index.php?page=profile">Profil</a></li>
 
                 <li><a href="index.php?page=logout">Déconnexion</a></li>
 
