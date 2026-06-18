@@ -41,14 +41,17 @@
     background:#111;
     border:1px solid #222;
     border-radius:24px;
-    overflow:hidden;
+    overflow:visible;
     box-shadow:0 0 20px rgba(255,77,210,.12);
     transition:.3s;
+    position:relative;
+    z-index:1;
 }
 
 .catalog-item-card:hover{
     transform:translateY(-5px);
     box-shadow:0 0 25px rgba(0,229,255,.25);
+    z-index:50;
 }
 
 .catalog-cover{
@@ -86,11 +89,17 @@
 .catalog-track-artist{
     color:#00e5ff;
     margin-bottom:8px;
+    position:relative;
+    display:inline-block;
+    cursor:help;
 }
 
 .catalog-track-category{
     color:#999;
     margin-bottom:18px;
+    position:relative;
+    display:inline-block;
+    cursor:help;
 }
 
 .catalog-track-price{
@@ -131,6 +140,40 @@
     transform:translateY(-2px);
 }
 
+.category-tooltip,
+.artist-tooltip{
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s ease;
+    pointer-events: none;
+    box-shadow: 0 0 15px rgba(0,0,0,.4);
+    z-index: 999999;
+}
+
+.category-tooltip{
+    width:250px;
+}
+
+.artist-tooltip{
+    width:300px;
+}
+
+.catalog-track-category:hover .category-tooltip,
+.catalog-track-artist:hover .artist-tooltip{
+    opacity:1;
+    visibility:visible;
+}
+
 @media(max-width:1000px){
     #catalog-grid{
         grid-template-columns:repeat(2, 1fr);
@@ -146,12 +189,7 @@
         padding:20px;
     }
 
-    #catalog-actions{
-        flex-direction:column;
-    }
-
     #catalog-grid{
         grid-template-columns:1fr;
     }
 }
-

@@ -39,10 +39,18 @@
 
                         <p class="catalog-track-artist">
                             <?= htmlspecialchars($musique['artiste']) ?>
+
+                            <span class="artist-tooltip">
+                                <?= htmlspecialchars($musique['artiste_bio'] ?? '') ?>
+                            </span>
                         </p>
 
                         <p class="catalog-track-category">
                             <?= htmlspecialchars($musique['categorie']) ?>
+
+                            <span class="category-tooltip">
+                                <?= htmlspecialchars($musique['categorie_description'] ?? '') ?>
+                            </span>
                         </p>
 
                         <div class="catalog-track-price">
@@ -85,4 +93,5 @@
 
 <script src="./assets/javascript/index.js"></script>
 <script src="./assets/javascript/Catalog.js"></script>
+
 <?php require __DIR__ . '/../includes/footer.php'; ?>

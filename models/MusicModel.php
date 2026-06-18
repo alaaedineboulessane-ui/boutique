@@ -42,7 +42,9 @@ class Music
                 m.id,
                 m.titre,
                 a.nom AS artiste,
+                a.bio AS artiste_bio,
                 c.nom AS categorie,
+                c.description AS categorie_description,
                 m.prix,
                 m.chemin_fichier,
                 m.chemin_image
